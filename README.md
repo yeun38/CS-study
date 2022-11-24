@@ -6,6 +6,7 @@ Since 2022.10.25
 
 - [지아](https://github.com/yujiah-github)
 - [영은](https://github.com/yeun38)
+- [수빈](https://github.com/robinjoon)
 
 ### 📖 목표
 
