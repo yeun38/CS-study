@@ -64,17 +64,30 @@ WHERE Dep.DepNo IS NULL
 #### FULL OUTER JOIN
 ![](https://velog.velcdn.com/images/cil05265/post/f4fc1181-8e54-4f62-b570-58828413fd55/image.png)
 
-SELECT Star.Name, Dep.Name
-FROM Star FULL OUTER JOIN Dep
-ON Star.DepNo = Dep.DepNo
-
 ```sql
 SELECT Star.Name, Dep.Name
 FROM Star FULL OUTER JOIN Dep
 ON Star.DepNo = Dep.DepNo
 ```
+
 - LEFT OUTER JOIN과 RIGHT OUTER JOIN의 결과값을 합친 것이다.
 
-
 ### CROSS JOIN
+- 크로스 조인은 두 테이블 간의 가능한 모든 경우의 수에 대한 결과를 보여 준다.
+- **카디널리티 곱**을 한 것이다.
+- 두 테이블의 **모든 행들을 서로 교차하여 곱**한다고 생각하면 된다.
+
+```sql
+SELECT Star.Name, Dep.DepName
+FROM Star CROSS JOIN Dep
+```
+
 ### SELF JOIN
+- 셀프 조인은 이름처럼 **자기 혼자서 스스로 결합**을 하는 방식이다.
+- 위의 LEFT, RIGHT 조인과는 다르게 다른 테이블을 참조하는 것이 아닌 자기 자신을 참조한다.
+
+```sql
+SELECT A.ID, A.Name, A.Partner, B.Partner PartName
+FROM Star A JOIN Star B
+ON A.Partner = B.ID
+```
